@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.blog'#Registramos la aplicación
+    'apps.blog', #Registramos la aplicación
+    'import_export', #Añadimos la libreria de import export del admin
 ]
 
 MIDDLEWARE = [
