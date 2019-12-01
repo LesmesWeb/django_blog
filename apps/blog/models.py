@@ -24,7 +24,7 @@ class Autor(models.Model):
     twitter = models.URLField('Twitter',null=True,blank=True)
     instagram = models.URLField('Instagram',null=True,blank=True)
     web = models.URLField('Web',null=True,blank=True)
-    coreo = models.EmailField('Correo Electronico',blank=False,null=False)
+    correo = models.EmailField('Correo Electronico',blank=False,null=False)
     estado = models.BooleanField('Autor Activo/No Activo',default=True)
     #auto_now = True actualiza el campo cada vez que se actualice el modelo, auto_now_add = True añadirlo solo una vez
     fecha_creación = models.DateField('Fecha de Creación', auto_now=False, auto_now_add=True)
@@ -43,7 +43,7 @@ class Post(models.Model):
     descripcion = models.CharField('Descripción',max_length=110,blank=False,null=False)
     #contido trabajara con la libreria pip install django-ckeditor
     contenido = RichTextField()
-    imagen = models.CharField('Imgaen',max_length=255,blank=False,null=False)
+    imagen = models.CharField('Imagen',max_length=255,blank=False,null=False)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE) #cada vez que eliminemos el autor se eliminaran sus POST
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE) #cada vez que eliminemos el autor se eliminaran sus POST
     estado = models.BooleanField('Publicado/No Publicado',default=True)
