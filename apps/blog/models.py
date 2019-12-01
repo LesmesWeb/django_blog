@@ -34,5 +34,6 @@ class Autor(models.Model):
         verbose_name_plural = 'Autores'
 
     def __str__(self):
-        return "{0},{1}".format({self.apellidos,self.nombres})
+        return self.apellidos
+        #return '{0},{1}'.format({self.apellidos,self.nombres})
     
