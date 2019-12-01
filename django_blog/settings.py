@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.blog', #Registramos la aplicación
     'import_export', #Añadimos la libreria de import export del admin
+    'ckeditor', # https://django-ckeditor.readthedocs.io/en/latest/
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,15 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#Configuración de la libreria ckeditar que se usa en post del campo Contenido
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        #'height': 300,
+        #'width': 300,
+    },
+}
 
 
 # Internationalization

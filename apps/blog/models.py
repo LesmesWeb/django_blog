@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 class Categoria(models.Model):
     id = models.AutoField(primary_key = True)
@@ -34,6 +34,27 @@ class Autor(models.Model):
         verbose_name_plural = 'Autores'
 
     def __str__(self):
-        return self.apellidos
-        #return '{0},{1}'.format({self.apellidos,self.nombres})
+        return "{0},{1}".format(self.apellidos,self.nombres) #muestra dos datos al momento de guardar
     
+class Post(models.Model):
+    id = models.AutoField(primary_key=True)
+    titulo = models.CharField('Titulo',max_length=90,blank=False,null=False)
+    slug = models.CharField('Slug',max_length=100,blank=False,null=False)
+    descripcion = models.CharField('Descripción',max_length=110,blank=False,null=False)
+    #contido trabajara con la libreria pip install django-ckeditor
+    contenido = RichTextField()
+    imagen = models.CharField('Imgaen',max_length=255,blank=False,null=False)
+    autor = models.ForeignKey(Autor, on_delete=models.CASCADE) #cada vez que eliminemos el autor se eliminaran sus POST
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE) #cada vez que eliminemos el autor se eliminaran sus POST
+    estado = models.BooleanField('Publicado/No Publicado',default=True)
+    #auto_now = True actualiza el campo cada vez que se actualice el modelo, auto_now_add = True añadirlo solo una vez
+    fecha_creacion = models.DateField('Fecha de creación', auto_now=False, auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Post'
+        verbose_name_plural = 'Posts'
+
+    def __str__(self):
+        return self.titulo
+    
+
