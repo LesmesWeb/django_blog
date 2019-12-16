@@ -23,6 +23,9 @@
 <p>{{detalle_post.descripcion}}</p>
 {% endblock sub_titulo %}
 
+{% block barra_busqueda %}
+{% endblock barra_busqueda %}
+
 {% block contenido %}
 <!-- para que renderice el codigo sin HTML se pone | safe (alt + 124)-->
 {{detalle_post.contenido | safe}}
