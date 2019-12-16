@@ -1,0 +1,19 @@
+<!-- heredadar caracteristicas del index -->
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{%block titulo%} Videojeugos {%endblock titulo%}
+
+
+{% block imagen %}
+'{% static 'img/videojuegos.jpg' %}'
+{% endblock imagen %}
+
+
+{% block titulo_principal %}
+Post Videojuegos
+{% endblock titulo_principal %}
+
+{% block sub_titulo %}
+Soy una descripcipción General de videojuegos
+{% endblock sub_titulo %}

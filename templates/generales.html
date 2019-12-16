@@ -1,0 +1,19 @@
+<!-- heredadar caracteristicas del index -->
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{%block titulo%} Generales {%endblock titulo%}
+
+
+{% block imagen %}
+'{% static 'img/generales.jpg' %}'
+{% endblock imagen %}
+
+
+{% block titulo_principal %}
+Post Generales
+{% endblock titulo_principal %}
+
+{% block sub_titulo %}
+Soy una descripcipción General
+{% endblock sub_titulo %}

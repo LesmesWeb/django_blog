@@ -12,16 +12,24 @@
    3.3 - \$echo "" >> **init**.py
    3.4 - django-admin startapp blog
 4. 'apps.blog', #registramos el app en settings.py INSTALLED_APPS
-4.2 creamos el archivo urls.py en el app
+   4.2 creamos el archivo urls.py en el app
 
+5) apps/blog/models.py --> Creación la base de datos en el modelo
+6) apps/blog/admin.py --> Mostramos los campos del modelo en el admin de Django
+7) Django Archivos estaticos
+   7.1 - settings.py --> STATICFILES_DIR = (os.path.join(BASE_DIR,'static'),) #directorio de donde van a estar alojados los archivos estaticos y donde buscarlos
+   7.2 - creamos nuestra carpeta static (como se definio en el STATICFILES_DIR)
 
-5. apps/blog/models.py --> Creación la base de datos en el modelo
-6. apps/blog/admin.py --> Mostramos los campos del modelo en el admin de Django
-7. Django Archivos estaticos
-    7.1 - settings.py --> STATICFILES_DIR = (os.path.join(BASE_DIR,'static'),) #directorio de donde van a estar alojados los archivos estaticos y donde buscarlos
-    7.2 - creamos nuestra carpeta static (como se definio en el STATICFILES_DIR)
+Templates
 
+1. heredadar caracteristicas del index : {% extends 'index.html' %}
+2. Carga los archivos estaticos puestos en el settings STATICFILES_DIR {% load staticfiles %}
+3. bloques con tags personalizados: {% block imagen %} '{% static 'img/videojuegos.jpg' %}' {% endblock imagen %}
+4. URL del proyecto principal que puede llamar el archivo url del APP: <a class="nav-link" href="{%  url 'blog:index' %}">Inicio</a>
 
-** Librerias usadas: 1. Import-export: permite importar datos y exportar 2. ckeditor: Permite crear un campo con herramientas tipo word
-** django-admin flush --> borra los datos y reaplica todo
-\*\* django-admin flush -- fake (hace migraciones falsas para encontrar el problema)
+\*\* Librerias usadas:
+
+1. Import-export: permite importar datos y exportar
+2. ckeditor: Permite crear un campo con herramientas tipo word
+   \*\* django-admin flush --> borra los datos y reaplica todo
+   \*\* django-admin flush -- fake (hace migraciones falsas para encontrar el problema)

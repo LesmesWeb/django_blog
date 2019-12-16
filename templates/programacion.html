@@ -1,0 +1,19 @@
+<!-- heredadar caracteristicas del index -->
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{%block titulo%} Programación {%endblock titulo%}
+
+
+{% block imagen %}
+'{% static 'img/programacion.jpg' %}'
+{% endblock imagen %}
+
+
+{% block titulo_principal %}
+Post Programación
+{% endblock titulo_principal %}
+
+{% block sub_titulo %}
+Soy una descripcipción Programación
+{% endblock sub_titulo %}

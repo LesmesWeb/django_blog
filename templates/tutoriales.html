@@ -1,0 +1,19 @@
+<!-- heredadar caracteristicas del index -->
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{%block titulo%} Tutoriales {%endblock titulo%}
+
+
+{% block imagen %}
+'{% static 'img/tutoriales.jpg' %}'
+{% endblock imagen %}
+
+
+{% block titulo_principal %}
+Post Tutoriales
+{% endblock titulo_principal %}
+
+{% block sub_titulo %}
+Soy una descripcipción Tutoriales
+{% endblock sub_titulo %}

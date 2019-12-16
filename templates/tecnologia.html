@@ -1,0 +1,19 @@
+<!-- heredadar caracteristicas del index -->
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{%block titulo%} Tecnología {%endblock titulo%}
+
+
+{% block imagen %}
+'{% static 'img/tecnologia.jpg' %}'
+{% endblock imagen %}
+
+
+{% block titulo_principal %}
+Post Tecnología
+{% endblock titulo_principal %}
+
+{% block sub_titulo %}
+Soy una descripcipción Tecnología
+{% endblock sub_titulo %}
