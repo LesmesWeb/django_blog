@@ -24,7 +24,7 @@ class Autor(models.Model):
     twitter = models.URLField('Twitter',null=True,blank=True)
     instagram = models.URLField('Instagram',null=True,blank=True)
     web = models.URLField('Web',null=True,blank=True)
-    correo = models.EmailField('Correo Electronico',blank=False,null=False)
+    correo = models.EmailField('Correo electronico', max_length=254)
     estado = models.BooleanField('Autor Activo/No Activo',default=True)
     #auto_now = True actualiza el campo cada vez que se actualice el modelo, auto_now_add = True añadirlo solo una vez
     fecha_creación = models.DateField('Fecha de Creación', auto_now=False, auto_now_add=True)

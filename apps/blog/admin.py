@@ -19,8 +19,8 @@ class AutorResource(resources.ModelResource):
         model = Autor
 
 class AutorAdmin(ImportExportModelAdmin,admin.ModelAdmin):
-    search_fields = ['nombres','apellidos','correo']
-    list_display = ('nombres','correo','estado','fecha_creación',)
+    search_fields = ['nombres','apellidos']
+    list_display = ('nombres','apellidos','correo','estado','fecha_creación',)
     resource_class = AutorResource
 
 # Import export Post
